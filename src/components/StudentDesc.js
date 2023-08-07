@@ -17,7 +17,7 @@ const StudentDesc = () => {
   const clickHandle = () => {
     dispatch(
       AddStudent({
-        Id: studentList.length,
+        id: studentList.length + 1,
         Name,
         Age,
         Batch,

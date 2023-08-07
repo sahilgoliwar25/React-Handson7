@@ -4,6 +4,7 @@ import Students from "./Students";
 import Home from "./Home";
 import Contact from "./Contact";
 import StudentDesc from "./StudentDesc";
+import EditStudent from "./EditStudent";
 
 function RouteCompo() {
   return (
@@ -13,6 +14,7 @@ function RouteCompo() {
         <Route path="/students" element={<Students />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/add-student" element={<StudentDesc />} />
+        <Route path="/edit-student" element={<EditStudent />} />
       </Routes>
     </div>
   );

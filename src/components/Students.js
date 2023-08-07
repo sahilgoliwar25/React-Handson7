@@ -1,12 +1,11 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Student.css";
 import { useSelector } from "react-redux";
 
 const Students = () => {
   const navi = useNavigate();
   const data = useSelector((state) => state.Student);
-  console.log(data);
   const clickHandle = () => {
     navi("/add-student");
   };
@@ -36,7 +35,15 @@ const Students = () => {
                 <td>{item.Course}</td>
                 <td>{item.Batch}</td>
                 <td>
-                  <Link to="/students">Edit</Link>
+                  <button
+                    className="css-button-arrow--black "
+                    onClick={() => {
+                      const id = item.id;
+                      navi("/edit-student", { state: id });
+                    }}
+                  >
+                    Edit
+                  </button>
                 </td>
               </tr>
             );
